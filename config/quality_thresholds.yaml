@@ -1,0 +1,26 @@
+# Quality Thresholds Configuration
+# ----------------------------------
+# Minimum acceptable scores for each quality dimension (0-100 scale).
+
+thresholds:
+  # Overall composite score to consider data "production-ready"
+  composite_score: 70.0
+
+  # Dimension-specific thresholds
+  completeness: 70.0
+  validity: 80.0
+  uniqueness: 95.0
+  timeliness: 60.0
+
+# Dimension weights for composite score calculation (must sum to 1.0)
+weights:
+  completeness: 0.40
+  validity:     0.30
+  uniqueness:   0.20
+  timeliness:   0.10
+
+# Timeliness window: records older than this are considered stale
+max_age_days: 30
+
+# Completeness: percentage of key fields that must be present per record
+completeness_threshold_per_record: 70.0

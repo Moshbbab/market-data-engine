@@ -1,0 +1,37 @@
+# Data Source Configurations
+# --------------------------
+# Configure extraction sources for the market data engine.
+# Replace placeholder values with real credentials.
+
+sources:
+  mls:
+    name: mls
+    type: mls
+    endpoint: "https://mls.example.com/api/v2"
+    api_key: null  # Set via MLS_API_KEY env var
+    rate_limit: 100  # requests per hour
+    enabled: true
+
+  public_records:
+    name: public_records
+    type: public_records
+    endpoint: "https://county-assessor.example.com/api"
+    api_key: null
+    rate_limit: 60
+    enabled: true
+
+  zillow:
+    name: zillow
+    type: api
+    endpoint: "https://api.zillow.com/v2"
+    api_key: null  # Set via ZILLOW_API_KEY env var
+    rate_limit: 200
+    enabled: false  # Enable when API key is provided
+
+  redfin:
+    name: redfin
+    type: api
+    endpoint: "https://api.redfin.com/v1"
+    api_key: null  # Set via REDFIN_API_KEY env var
+    rate_limit: 120
+    enabled: false

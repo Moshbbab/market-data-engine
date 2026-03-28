@@ -1,0 +1,49 @@
+# Validation Rules Configuration
+# --------------------------------
+# Domain-specific rules applied during business rules validation.
+
+price:
+  min: 1               # Must be > 0
+  max: 100000000       # $100M upper sanity check
+
+sqft:
+  min: 1
+  max: 100000          # 100 000 sqft upper limit
+
+bedrooms:
+  min: 0
+  max: 50
+
+bathrooms:
+  min: 0
+  max: 50
+
+year_built:
+  min: 1800
+  # max is auto-set to current year
+
+lot_size:
+  min: 0
+  max: 50000000        # 50M sqft (~1 150 acres)
+
+price_per_sqft:
+  max: 50000           # $/sqft – ultra-luxury threshold
+
+property_types:
+  valid:
+    - single_family
+    - condo
+    - townhouse
+    - multi_family
+    - land
+    - commercial
+    - industrial
+
+statuses:
+  valid:
+    - active
+    - pending
+    - sold
+    - expired
+    - withdrawn
+    - cancelled
